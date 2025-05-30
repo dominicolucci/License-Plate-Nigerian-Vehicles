@@ -18,13 +18,13 @@ class frame_alpr (wx.Frame):
             pos=wx.DefaultPosition, size=wx.Size(800, 800),
             style=wx.DEFAULT_FRAME_STYLE|wx.TAB_TRAVERSAL)
         
-        self.SetSizeHintsSz(wx.Size(800,800), wx.Size(800, 800))
+        self.SetSizeHints(wx.Size(800, 800), wx.Size(800, 800))
         
         self.menubar = wx.MenuBar(0)
         self.menu_file = wx.Menu()
         self.menuitem_openfile = wx.MenuItem(self.menu_file, wx.ID_ANY,
             u"Open File", wx.EmptyString, wx.ITEM_NORMAL)
-        self.menu_file.AppendItem(self.menuitem_openfile)
+        self.menu_file.Append(self.menuitem_openfile)
 
         self.menubar.Append(self.menu_file, u"File") 
         

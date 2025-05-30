@@ -1,5 +1,5 @@
 import numpy as np
-from skimage.io import imread
+from imageio import imread
 from skimage import restoration
 from skimage import measure
 from skimage.measure import regionprops
@@ -17,7 +17,7 @@ class PreProcess():
 
         image_location: str; full image directory path
         """
-        self.full_car_image = imread(image_location, as_grey=True)
+        self.full_car_image = imread(image_location, mode='L')  # ✅ Correct version
         
         self.full_car_image = self.resize_if_necessary(self.full_car_image)
 

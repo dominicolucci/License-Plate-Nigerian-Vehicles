@@ -1,5 +1,5 @@
 from skimage.transform import resize
-from sklearn.externals import joblib
+import joblib
 import templatematching
 import os.path
 class DeepMachineLearning():
@@ -34,7 +34,7 @@ class DeepMachineLearning():
             prediction_probability = probabilities[0, result_index]
             # template matching when necessary
             if result[0] in templatematching.confusing_chars and prediction_probability < 0.15:
-                print 'here'
+                print ('here')
                 result[0] = templatematching.template_match(result[0],
                     eachObject, os.path.join(os.path.dirname(os.path.realpath(
                         __file__)), 'training_data', 'train20X20'))
